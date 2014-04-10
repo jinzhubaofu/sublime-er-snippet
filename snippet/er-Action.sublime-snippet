@@ -1,0 +1,27 @@
+<snippet>
+    <content><![CDATA[
+define(function (require) {
+    var Action = require('er/Action');
+    var util = require('er/util');
+
+    function ${1:action}() {
+        Action.apply(this, arguments);
+    }
+
+    ${1}.prototype.modelType = require('./${1}Model');
+    ${1}.prototype.viewType = require('./${1}View');
+
+    ${1}.prototype.initBehavior = function () {
+        Action.prototype.initBehavior.apply(this, arguments);
+        ${2:// 事件绑定...}
+    };
+
+    util.inherits(${1}, Action);
+    return ${1};
+});
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>er-Action</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.js</scope>
+</snippet>

@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[
+define(function (require) {
+    var View = require('ef/UIView');
+    var util = require('er/util');
+
+    function ${1:view}() {
+        View.apply(this, arguments);
+    }
+
+    ${1}.prototype.template = '${2:etpl target}';
+
+    ${1}.prototype.uiProperties = {
+        ${3:// 添加控件配置}
+    };
+
+    ${1}.prototype.uiEvents = {
+        ${4:// 添加控件事件绑定}
+    };
+
+    util.inherits(${1}, View);
+    return ${1};
+});
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>ef-UIView</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.js</scope>
+</snippet>
